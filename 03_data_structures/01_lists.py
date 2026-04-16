@@ -9,6 +9,7 @@ print(len(myList))  # 5 (Total number of items)
 
 print(myList[0])  # "Apple" (First element)
 print(myList[-1])  # 5 (Last element via negative indexing)
+# print(myList[10])  # IndexError: list index out of range
 
 # List Slicing [start:stop]
 # Remember: 'start' and 'stop' are indices, 'start' is inclusive and 'stop' is EXCLUSIVE.
@@ -72,8 +73,8 @@ print(myList)  # ['Banana', 5, 3.9, 'Anand', 'Prakash', True, 5]
 # If index is out of range, insert() will simply append to the end.
 myList.append("Raj")  # Appends a single item to the very end.
 myList.insert(3, "Isha")  # Pushes "Isha" into index 1, shifting everything right.
-myList.insert(20, "Jyoti")
-print(myList)
+myList.insert(20, "Jyoti")  # index in greater than length so this will add at last
+print(f"After added : ,{myList}")
 
 myList = ["Anand"]
 myList2 = ["Isha", "Anisha"]
@@ -141,3 +142,12 @@ nestedList = [1, 2, ["A", "B"], [5, [6, 7]]]
 print(nestedList[2])  # ["A", "B"]
 print(nestedList[2][1])  # "B" (Goes to index 2, then index 1 inside that)
 print(nestedList[3][1][0])  # 6 (Traverses three levels deep)
+
+# ===== List comprehension
+myList = [1, 3, 5, 6]
+squaredList = []
+# for item in myList:
+#     squaredList.append(item * item)
+
+squaredList = [i * i for i in myList]
+print(squaredList)

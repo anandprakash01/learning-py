@@ -85,3 +85,90 @@ threats = unique_logs & banned_ips
 
 print(unique_logs)
 print(threats)
+
+
+def format_user(name, role, status="offline"):
+    return {"name": name, "role": role, "status": status}
+
+
+user_1 = format_user("admin", "root")
+user_2 = format_user(name="guest", role="viewer", status="online")
+
+print(user_1)
+print(user_2)
+
+
+# ================================
+system_lock = False
+
+
+def trigger_lockdown():
+    global system_lock
+    system_lock = True
+
+
+print(system_lock)
+trigger_lockdown()
+print(system_lock)
+
+multiplier = lambda x, y: x * y
+print(multiplier(10, 5))
+
+
+# ===========================
+# classes
+class Firewall:
+    def __init__(self, name, level=1):
+        self.name = name
+        self.level = level
+        self.breached = False
+
+    def attack(self, power):
+        if power > self.level:
+            self.breached = True
+
+
+fw1 = Firewall("Gateway", 5)
+fw1.attack(10)
+print(fw1.breached)
+
+
+# inheritance
+class Vehicle:
+    def __init__(self, speed):
+        self.speed = speed
+
+    def drive(self):
+        return f"Moving at {self.speed} mph"
+
+
+class SportsCar(Vehicle):
+    def __init__(self, speed, turbo):
+        super().__init__(speed)
+        self.turbo = turbo
+
+    def drive(self):
+        if self.turbo:
+            return f"Zooming at {self.speed} mph with turbo!"
+        else:
+            return super().drive()
+
+
+my_car = SportsCar(120, True)
+print(my_car.drive())
+
+
+def safe_divide(a, b):
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        return "Math Error"
+    except TypeError:
+        return "Type Error"
+    else:
+        return result
+
+
+print(safe_divide(10, 2))
+print(safe_divide(10, 0))
+print(safe_divide(10, "A"))

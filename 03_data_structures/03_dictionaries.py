@@ -15,7 +15,7 @@ dict_via_constructor = dict(id=101, user="Isha")  # Notice keys do not need quot
 # Nested dictionary
 user_nested = {
     "person1": {"name": "anand", "age": 28},
-    "person2": {"name": "prakash", "age": 30},
+    "person2": {"name": "isha", "age": 20},
 }
 print("Nested dictionary:", user_nested)
 
@@ -44,7 +44,8 @@ print("Copied dictionary:", dict_copy)
 # .pop(key) deletes the key-value pair and RETURNS the value so you can save it.
 print(dictionary.pop("lists"))
 
-# .popitem() removes and returns the LAST inserted key-value pair as a Tuple.
+# .popitem() removes the LAST inserted key-value pair and returns as a Tuple.
+print(dictionary)
 print(dictionary.popitem())
 
 # 'del' keyword wipes the key from memory entirely without returning anything.

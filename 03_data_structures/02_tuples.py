@@ -6,7 +6,6 @@ import sys
 # Defined by parentheses ().
 # ordered, immutable sequences of elements.
 # They preserve the order of items, allow duplicates, and cannot be changed once created.
-# To make a tuple with only ONE item, you MUST include a trailing comma, otherwise Python thinks it's just an integer.
 
 myTuple = ("Anand", 5, 3.9, True, 5)  # A tuple with multiple items.
 emptyTuple = ()  # An empty tuple.
@@ -32,6 +31,8 @@ print("Packed Tuple:", t_packed)
 myTuple = ("Anand", 5, 3.9, True, 5)
 print(myTuple[0])  # "Anand" (First element)
 print(myTuple[-1])  # 5 (Last element via negative indexing)
+# print(myTuple[10])  #IndexError: tuple index out of range
+
 print(myTuple[1:3])  # (5, 3.9) (Slice from index 1 up to 2, NOT including, 3)
 print(myTuple[1:])  # (5, 3.9, True, 5) (Start from index 1 to the end)
 print(myTuple[:3])  # ("Anand", 5, 3.9) (from 0 up to index 2)
@@ -44,8 +45,6 @@ print(myTuple[::-1])  # (5, True, 3.9, 5, "Anand") (Creates a reversed copy)
 print(myTuple[::-3])  # (5, 5) (Every third element in reverse)
 print(myTuple[1::2])  # (5, True) (Every second element starting from index 1)
 print(myTuple[2:0:-1])  # (3.9, 5) (Reverse slice from index 2 down to index 1)
-# print(myTuple[5])  # IndexError: tuple index out of range
-
 
 # ===== 3. IMMUTABILITY (The Core Constraint)
 # Tuples are immutable, meaning their elements cannot be changed after creation.

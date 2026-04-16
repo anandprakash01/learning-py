@@ -55,3 +55,10 @@ for i in range(5):
     print(f"count: {i}")
 else:
     print("Loop completed without interruption.")
+
+
+# ===== enumerate
+l = [1, 25, 35, 45]
+
+for index, item in enumerate(l):
+    print(f"The item at index {index} is {item}")

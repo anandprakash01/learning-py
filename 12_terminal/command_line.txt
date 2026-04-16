@@ -1,0 +1,43 @@
+# ===== 1. CREATING THE VIRTUAL ENVIRONMENT =====
+# Open your terminal inside your project folder and run:
+python -m venv my_env
+or
+pip install virtualenv
+virtualenv env # -> the folder name is env
+
+# This creates a literal folder called 'my_env' containing a standalone Python interpreter.
+
+
+# ===== 2. ACTIVATING THE BUBBLE =====
+# You MUST activate the environment before installing anything.
+# If your terminal prompt changes to show (my_env) on the left, you are inside.
+
+# On Windows:
+my_env\Scripts\activate
+
+# On Mac/Linux:
+source my_env/bin/activate
+
+
+# ===== 3. INSTALLING PACKAGES =====
+# Now that we are in the bubble, we can safely install third-party code.
+pip install requests
+
+# You can specify exact versions to prevent future updates from breaking your code:
+pip install requests==2.28.1
+
+
+# ===== 4. THE ENTERPRISE STANDARD: requirements.txt =====
+# When you push code to GitHub, you DO NOT push the 'my_env' folder (it's too massive).
+# Instead, you create a text file listing every package your project needs.
+
+# To auto-generate this list based on what is currently in your bubble:
+pip freeze > requirements.txt
+
+# When another developer downloads your project, they create their own empty bubble, and tell pip to install everything from that list:
+pip install -r requirements.txt
+
+
+# ===== 5. DEACTIVATING =====
+# To step out of the bubble and return to your global computer:
+deactivate
