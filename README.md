@@ -49,7 +49,7 @@ To run these files locally, you will need the following installed on your machin
 ### Clone the repository:
 
 ```bash
-git clone https://github.com/anandprakash01/py-learning.git
+git clone https://github.com/anandprakash01/learning-py.git
 ```
 
 ### Execution
